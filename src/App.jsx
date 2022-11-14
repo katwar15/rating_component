@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { Card } from "./components/Card/Card";
-import { ThankCard } from "./components/ThankCard/ThankCard";
+import RateUs from "./components/RateUs/RateUs";
+import ThankCard from "./components/ThankCard/ThankCard";
+import "./App.css";
 
 function App() {
   const [selectedInput, setSelectedInput] = useState(0);
@@ -11,9 +12,8 @@ function App() {
 
   return (
     <div>
-      <Card />
       {selectedInput ? (
-        <ThankYou selectedInput={selectedInput} />
+        <ThankCard selectedInput={selectedInput} />
       ) : (
         <RateUs submitHandler={submitHandler} />
       )}
